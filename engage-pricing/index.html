@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/48d0fa8cae.js" crossorigin="anonymous"></script>
+    <title>Pricing</title>
+</head>
+<body onload="totalAmount()">
+    <h1>Pricing</h1>
+
+    <div class="counter-box">
+        <p>Insira a quantidade de funcionários</p>
+        <div class="counter-buttons">
+            <div id="minus">
+                <img class="minus-sign" src="/minus.png" alt="minus sign">
+            </div>
+
+            <input id="counter" type="number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+
+            <div id="plus">
+                <img class="plus-sign" src="/plus.png" alt="plus sign">
+            </div>
+        </div>
+    </div>
+
+    <div id="simulation-text">
+        <p>E veja abaixo a simulação</p>
+    </div>
+
+
+    <div id="hundred-less">
+        <h5>Selecione o plano que mais se adapta a sua empresa.</h5>
+        <div class="checkboxes">
+            <label for="monthly">Mensal</label>
+            <input type="checkbox" name="monthly" id="monthly">
+            <label for="monthly">Anual</label>
+            <input type="checkbox" name="anual" id="anual"  checked>
+            <div class="fifteen-off">15% off</div>
+        </div>
+
+        <div class="total-price-card">
+            <div class="fifteen-off" id="discount-tag">15% off</div>
+            <h4>Veja o total para a sua empresa</h4>
+            <span id="discount-total-amount" class="price-discount">322,00/anual</span>
+            <p>R$ <span id="total-amount" class="purple-price">280,00</span>/<span id="time-of-payment">anual</span></p>
+        </div>
+
+        <div class="plans" id="plans-by-month">
+            <div id="basic-month" class="plan-card">
+                <div style="display:flex;flex-direction:row ;margin-top:2em">
+                    <label for="basic-month-checkbox">Básico</label>
+                    <input type="checkbox" name="basic" id="basic-month-checkbox">
+                </div>
+                <p class="price-paragraph">R$ <span class="purple-price" id="basic-month-price">5,00</span> por<br>colaborador</p>
+
+                <p style="font-size:12px;color:#686A6B;">Cobrança apenas por usuário ativo</p>
+                <ul>
+                    <li><i class="fas fa-check-circle green-icon"></i> Colaboradores em diferentes regiões</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Bilíngue</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Registro de Ponto via PC ou mobile; </li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Geolocalização;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Integração com relógio ponto;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Integração com Fechamento de Folha Ponto;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Envio de atestados e abonos;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Gestão de banco de horas e horas extras;</li>
+                    <li><i class="fas fa-minus-circle yellow-icon"></i> Contratações diversificadas;*</li>
+                    <li><i class="fas fa-minus-circle yellow-icon"></i> Gestão de turnos e escalas diferentes;*</li>
+                    <li><i class="fas fa-minus-circle yellow-icon"></i> Relatórios gerenciais;*</li>
+                </ul>
+
+                <button style="margin-top: 6em;" class="specialist">Fale com um especialista</button>
+            </div>
+            <div id="pro-month" class="plan-card plan-active">
+                <div style="display:flex;flex-direction:row ;margin-top:2em">
+                    <label for="pro-month-checkbox">Pro</label>
+                    <input type="checkbox" name="basic" id="pro-month-checkbox" checked>
+                </div>
+
+                <p class="price-paragraph">R$ <span class="purple-price" id="pro-month-price">8,00</span> por<br>colaborador</p>
+
+                <p style="font-size:12px;color:#686A6B;">Cobrança apenas por usuário ativo</p>
+                <p style="color: #686A6B;">Tudo do plano <strong>Básico</strong> e mais:</p>
+                <ul>
+                    <li><i class="fas fa-check-circle green-icon"></i> Contratações diversificadas;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Gestão de turnos e escalas diferentes;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Relatórios gerenciais; </li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Sistema personalizável;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Solicitações de reembolso;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Solicitações de férias;</li>
+
+                </ul>
+
+                <button style="margin-top: 11em;" class="specialist">Fale com um especialista</button>
+            </div>
+        </div>
+
+        <div class="plans" id="plans-by-year">
+            <div id="basic-year" class="plan-card">
+                <div style="display:flex;flex-direction:row ;margin-top:4.5em">
+                    <label for="basic-year-checkbox">Básico</label>
+                    <input type="checkbox" name="basic" id="basic-year-checkbox">
+                </div>
+                <p class="price-paragraph">R$ <span class="purple-price" id="basic-year-price">5,00</span> por<br>colaborador</p>
+                <p class="price-discount"><span style="font-size: 12px;">R$</span> <span id="basic-discount"></span> por colaborador</p>
+
+                <p style="font-size:12px;color:#686A6B;">Cobrança apenas por usuário ativo</p>
+                <ul>
+                    <li><i class="fas fa-check-circle green-icon"></i> Colaboradores em diferentes regiões</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Bilíngue</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Registro de Ponto via PC ou mobile; </li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Geolocalização;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Integração com relógio ponto;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Integração com Fechamento de Folha Ponto;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Envio de atestados e abonos;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Gestão de banco de horas e horas extras;</li>
+                    <li><i class="fas fa-minus-circle yellow-icon"></i> Contratações diversificadas;*</li>
+                    <li><i class="fas fa-minus-circle yellow-icon"></i> Gestão de turnos e escalas diferentes;*</li>
+                    <li><i class="fas fa-minus-circle yellow-icon"></i> Relatórios gerenciais;*</li>
+                </ul>
+
+                <button style="margin-top: 6em;" class="specialist">Fale com um especialista</button>
+
+            </div>
+            <div id="pro-year" class="plan-card plan-active">
+                <div class="fifteen-off" style="margin-bottom: 2em;margin-top: 2em;">Melhor oferta</div>
+                <div style="display:flex;flex-direction:row">
+                    <label for="pro-year-checkbox">Pro</label>
+                    <input type="checkbox" name="basic" id="pro-year-checkbox" checked>
+                </div>
+                <p class="price-paragraph">R$ <span class="purple-price" id="pro-year-price">8,00</span> por colaborador</p>
+                <p class="price-discount"><span style="font-size: 12px;">R$</span> <span id="pro-discount"></span> por colaborador</p>
+
+                <p style="font-size:12px;color:#686A6B;">Cobrança apenas por usuário ativo</p>
+                <p style="color: #686A6B;">Tudo do plano <strong>Básico</strong> e mais:</p>
+                <ul>
+                    <li><i class="fas fa-check-circle green-icon"></i> Contratações diversificadas;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Gestão de turnos e escalas diferentes;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Relatórios gerenciais; </li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Sistema personalizável;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Solicitações de reembolso;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Solicitações de férias;</li>
+
+                </ul>
+
+                <button style="margin-top: 12.5em;" class="specialist">Fale com um especialista</button>
+            </div>
+        </div>
+
+        <div class="last-button">
+            <button class="yellow-button">Contrate aqui</button>
+        </div>
+    </div>
+
+    <div id="hundred-more">
+        <div class="plans">
+            <div class="plan-card" id="hundred-basic">
+                <div style="display:flex;flex-direction:row; margin-top: 2em;">
+                    <label for="hundred-basic-checkbox">Básico</label>
+                    <input type="checkbox" name="basic" id="hundred-basic-checkbox">
+                </div>
+                <h4>Temos uma proposta<br>especial <span style="color: #A66AFA;">para você!</span></h4>
+                <p style="font-size:12px;color:#686A6B;">Cobrança apenas por usuário ativo</p>
+                <ul>
+                    <li><i class="fas fa-check-circle green-icon"></i> Colaboradores em diferentes regiões</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Bilíngue</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Registro de Ponto via PC ou mobile; </li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Geolocalização;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Integração com relógio ponto;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Integração com Fechamento de Folha Ponto;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Envio de atestados e abonos;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Gestão de banco de horas e horas extras;</li>
+                    <li><i class="fas fa-minus-circle yellow-icon"></i> Contratações diversificadas;*</li>
+                    <li><i class="fas fa-minus-circle yellow-icon"></i> Gestão de turnos e escalas diferentes;*</li>
+                    <li><i class="fas fa-minus-circle yellow-icon"></i> Relatórios gerenciais;*</li>
+                </ul>
+
+                <button style="margin-top: 6em;" class="specialist">Fale com um especialista</button>
+            </div>
+    
+            <div class="plan-card plan-active" id="hundred-pro">
+                <div style="display:flex;flex-direction:row ;margin-top: 2em;">
+                    <label for="hundred-pro-checkbox">Pro</label>
+                    <input type="checkbox" name="basic" id="hundred-pro-checkbox" checked>
+                </div>
+                <h4>Temos uma proposta<br>especial <span style="color: #A66AFA;">para você!</span></h4>
+                <p style="font-size:12px;color:#686A6B;">Cobrança apenas por usuário ativo</p>
+                <p style="color: #686A6B;">Tudo do plano <strong>Básico</strong> e mais:</p>
+                <ul>
+                    <li><i class="fas fa-check-circle green-icon"></i> Contratações diversificadas;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Gestão de turnos e escalas diferentes;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Relatórios gerenciais; </li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Sistema personalizável;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Solicitações de reembolso;</li>
+                    <li><i class="fas fa-check-circle green-icon"></i> Solicitações de férias;</li>
+
+                </ul>
+
+                <button style="margin-top: 11.5em;" class="specialist">Fale com um especialista</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+body{
+    background-color: black;
+    color: white;
+    font-family: Overpass,sans-serif;
+}
+
+.counter-box{
+    width: 20%;
+    height: 8rem;
+    background-color: #FEFEFE;
+    font-size: 16px;
+    color: #3A3C3E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #FEFEFE;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.counter-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.counter-buttons input{
+    width: 30%;
+    height: 64px;
+    font-size: 45px;
+    text-align: center;
+    color: #A66AFA;
+    border:none;
+    
+}
+
+#minus{
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: white;
+    margin-top: 1rem;
+}
+
+#plus{
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: white;
+    margin-top: 1rem;
+}
+
+.plus-sign{
+    margin-left: 0.3em;
+    margin-top: 0.3em;
+}
+
+.minus-sign{
+    margin-left: 0.5em;
+    margin-top: 0.9em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+input[type='checkbox']{
+    width: 1em;
+    height: 1em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type='checkbox']:checked{
+    background-color: #AC71FF;
+}
+
+.checkbox-pink:checked{
+    background-color: pink;
+}
+
+.fifteen-off{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;   
+    color: black;
+    background: #FFE500;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    margin-left: 1em;
+    font-size: 12px;  
+}
+
+#simulation-text{
+    width: 20%;
+    text-align: center;
+}
+
+#hundred-less{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.total-price-card{
+    width: 25%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 64px;
+    background: #FEFEFE;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 3em;
+    color:#3A3C3E;
+}
+
+.checkboxes{
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.checkboxes label{
+    margin-left: 2em;
+}
+#hundred-more{
+    display: none;
+    justify-content: center;
+}
+
+.plans{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: black;
+    
+}
+.plans label{
+    color: black;
+}
+
+.plan-card{
+    width: 40%;
+    height: 45rem;
+    background: #FEFEFE;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    opacity:0.7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.plan-card h4{
+    font-size: 24px;
+}
+
+.plan-active{
+    border:3px solid #AC71FF;
+    opacity:1;
+}
+
+#plans-by-month{
+    display:none;
+}
+
+.price-paragraph{
+    font-size: 14px;
+    color:#3A3C3E;
+}
+.purple-price{
+    color: #AC71FF;
+    font-size: 37px;
+}
+
+.price-discount{
+    color: red;
+    font-size: 14px;
+    text-decoration: line-through;
+    margin-top: -1em;
+}
+
+.green-icon{
+    color: green;
+}
+.yellow-icon{
+    color: #FFE500;
+}
+
+ul{
+    list-style-type: none;
+    font-size: 12px;
+    margin-right: 3em;
+}
+
+li{
+    margin-bottom: 1em;
+}
+
+.specialist{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+    gap: 10px;
+    color: #F3F3F3;
+    font-size: 14px;
+    width: 233px;
+    height: 51px;
+    cursor: pointer;
+    background: #3A3C3E;
+    border: 1px solid #3A3C3E;
+    
+}
+
+.specialist:hover{
+    background-color: #484a4d;
+}
+
+
+.yellow-button{
+    padding: 16px 32px;
+    gap: 10px;
+    width: 184px;
+    height: 57px;
+    background: #FFE500;
+    color:black;
+    border:1px solid #FFE500;
+    cursor:pointer;
+    margin-top: 4em;
+}
+
+.yellow-button:hover{
+    background: #efd80b;
+}
